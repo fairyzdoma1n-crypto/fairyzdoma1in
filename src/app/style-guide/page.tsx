@@ -1,5 +1,3 @@
-import { ChromeText } from "@/components/ChromeText";
-
 const bodyTestParagraph =
   "This is what a real paragraph of project description looks like — long enough to judge whether you can actually read it comfortably, not just admire it as a headline.";
 
@@ -97,16 +95,6 @@ export default function StyleGuide() {
                 </p>
               </div>
             ))}
-          </div>
-        </section>
-
-        {/* Silver accent */}
-        <section className="space-y-3 border-t border-ink/10 pt-10">
-          <h2 className="font-mono text-sm uppercase tracking-widest text-ink/60">
-            Silver accent — small-scale
-          </h2>
-          <div className="bg-ink rounded-xl px-6 py-4 inline-flex items-center gap-3">
-            <ChromeText className="font-picnic text-3xl">arjita</ChromeText>
           </div>
         </section>
       </div>

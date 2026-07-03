@@ -9,7 +9,6 @@
   --mocha: #8a7362;
   --rose-dust: #d9bdb6;
   --stone: #ada69c;
-  --silver: #c8ccd0;
 }
 
 @theme inline {
@@ -21,7 +20,6 @@
   --color-mocha: var(--mocha);
   --color-rose-dust: var(--rose-dust);
   --color-stone: var(--stone);
-  --color-silver: var(--silver);
 
   --font-sans: var(--font-inter);
   --font-mono: var(--font-mono);
@@ -46,48 +44,4 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-sans), Arial, Helvetica, sans-serif;
-}
-
-/* Liquid chrome text: a metallic gradient base + a specular "sheen" layer
-   clipped to the same glyph shapes and blended on top, so it reads as
-   glossy/inflated rather than flat foil. See components/ChromeText.tsx. */
-.chrome-text-base {
-  background-image: linear-gradient(
-    120deg,
-    #6b6f74 0%,
-    #ffffff 22%,
-    #9aa0a6 40%,
-    #ffffff 58%,
-    #7a7e83 76%,
-    #ffffff 92%,
-    #6b6f74 100%
-  );
-  background-size: 220% 100%;
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
-  -webkit-text-fill-color: transparent;
-  filter: drop-shadow(0 3px 1px rgba(27, 27, 31, 0.35));
-  animation: chrome-shimmer 7s ease-in-out infinite;
-}
-
-.chrome-text-sheen {
-  background-image:
-    radial-gradient(ellipse 65% 45% at 28% 15%, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0) 55%),
-    radial-gradient(ellipse 45% 30% at 78% 85%, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0) 60%);
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
-  -webkit-text-fill-color: transparent;
-  mix-blend-mode: overlay;
-}
-
-@keyframes chrome-shimmer {
-  0%,
-  100% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
 }
