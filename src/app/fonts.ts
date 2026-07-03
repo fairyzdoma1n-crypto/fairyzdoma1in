@@ -1,13 +1,7 @@
 import localFont from "next/font/local";
-import {
-  Inter,
-  Geist_Mono,
-  Beau_Rivage,
-  Mrs_Saint_Delafield,
-  Petit_Formal_Script,
-} from "next/font/google";
+import { Inter, Geist_Mono, Miss_Fajardose } from "next/font/google";
 
-// Clean, boring body sans — intentional contrast to the loud display fonts below.
+// Clean, boring UI/functional sans — buttons, forms, dense text.
 export const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
@@ -19,7 +13,14 @@ export const mono = Geist_Mono({
   subsets: ["latin"],
 });
 
-// PicNic — organic serif with contextual ligatures. Big whimsical headlines.
+// Miss Fajardose — dramatic flourished calligraphy. Main headline font.
+export const missFajardose = Miss_Fajardose({
+  variable: "--font-miss-fajardose",
+  weight: "400",
+  subsets: ["latin"],
+});
+
+// PicNic — organic serif with contextual ligatures. Display + small accents.
 // NOTE: licensed under Velvetyne's CUTE license, not standard OFL — pending your confirmation.
 export const picnic = localFont({
   src: "../fonts/picnic/PicNic.woff2",
@@ -28,14 +29,16 @@ export const picnic = localFont({
 });
 
 // Kaeru Kaeru — blobby, poison-dart-frog-and-woodcut inspired display font.
-// Now doing double duty: display headers and small/retro-accent spots (replacing TINY).
+// Role TBD.
 export const kaerukaeru = localFont({
   src: "../fonts/kaerukaeru/kaerukaeru-Regular.woff2",
   variable: "--font-kaeru",
   display: "swap",
 });
 
-// Flor de Ruina — five life-cycle stages of the same glyph set, germination to fracture.
+// Flor de Ruina — five life-cycle stages of the same glyph set, germination
+// to fracture. "semilla" is the main body-copy stage (best legibility); the
+// other four are reserved for rare decay-themed accent moments.
 export const florGermen = localFont({
   src: "../fonts/flor-de-ruina/FlorDeRuina-Germen.woff2",
   variable: "--font-flor-germen",
@@ -66,28 +69,10 @@ export const florFractura = localFont({
   display: "swap",
 });
 
-// Three cursive candidates for comparison — pick one, the other two get removed.
-export const beauRivage = Beau_Rivage({
-  variable: "--font-beau-rivage",
-  weight: "400",
-  subsets: ["latin"],
-});
-
-export const mrsSaintDelafield = Mrs_Saint_Delafield({
-  variable: "--font-mrs-saint-delafield",
-  weight: "400",
-  subsets: ["latin"],
-});
-
-export const petitFormalScript = Petit_Formal_Script({
-  variable: "--font-petit-formal-script",
-  weight: "400",
-  subsets: ["latin"],
-});
-
 export const allFontVariables = [
   inter.variable,
   mono.variable,
+  missFajardose.variable,
   picnic.variable,
   kaerukaeru.variable,
   florGermen.variable,
@@ -95,7 +80,4 @@ export const allFontVariables = [
   florFlor.variable,
   florRuina.variable,
   florFractura.variable,
-  beauRivage.variable,
-  mrsSaintDelafield.variable,
-  petitFormalScript.variable,
 ].join(" ");

@@ -1,18 +1,81 @@
 import { ChromeText } from "@/components/ChromeText";
 
+const bodyTestParagraph =
+  "This is what a real paragraph of project description looks like — long enough to judge whether you can actually read it comfortably, not just admire it as a headline.";
+
 export default function StyleGuide() {
   return (
     <main className="min-h-screen bg-paper text-ink px-6 py-16 sm:px-12">
       <div className="mx-auto max-w-4xl space-y-20">
         <header className="space-y-2">
           <p className="font-mono text-xs tracking-widest uppercase text-ink/60">
-            internal / not a real page — v2, french-archive direction
+            internal / not a real page — v4, finalized type system
           </p>
           <h1 className="font-picnic text-5xl sm:text-6xl">style guide</h1>
         </header>
 
-        {/* Color palette */}
-        <section className="space-y-4">
+        {/* Finalized type system */}
+        <section className="space-y-10">
+          <h2 className="font-mono text-sm uppercase tracking-widest text-ink/60">
+            Finalized type system
+          </h2>
+
+          <div className="space-y-2">
+            <p className="font-mono text-xs text-ink/50">
+              font-headline — Miss Fajardose — main headline font
+            </p>
+            <p className="font-headline text-7xl leading-none">arjita</p>
+          </div>
+
+          <div className="space-y-2">
+            <p className="font-mono text-xs text-ink/50">
+              font-picnic — PicNic — display + small accents{" "}
+              <span className="text-mocha">(pending license confirmation)</span>
+            </p>
+            <p className="font-picnic text-5xl leading-none">projects &amp; play</p>
+          </div>
+
+          <div className="space-y-2">
+            <p className="font-mono text-xs text-ink/50">
+              font-kaeru — Kaeru Kaeru — role TBD
+            </p>
+            <p className="font-kaeru text-5xl leading-none">what&apos;s in my bag</p>
+          </div>
+
+          <div className="space-y-2 max-w-prose">
+            <p className="font-mono text-xs text-ink/50">
+              font-body — Flor de Ruina (semilla stage) — main body copy
+            </p>
+            <p className="font-body text-lg leading-relaxed">{bodyTestParagraph}</p>
+          </div>
+
+          <div className="space-y-2 max-w-prose">
+            <p className="font-mono text-xs text-ink/50">
+              font-sans — Inter — functional UI text (buttons, forms, nav)
+            </p>
+            <p className="font-sans text-base">Sign the guestbook</p>
+          </div>
+        </section>
+
+        {/* Flor de Ruina decay accents */}
+        <section className="space-y-4 border-t border-ink/10 pt-10">
+          <h2 className="font-mono text-sm uppercase tracking-widest text-ink/60">
+            Flor de Ruina — rare decay accents (not body copy)
+          </h2>
+          {[
+            { label: "germen", cls: "font-flor-germen" },
+            { label: "flor", cls: "font-flor-flor" },
+            { label: "ruina", cls: "font-flor-ruina" },
+            { label: "fractura", cls: "font-flor-fractura" },
+          ].map((f) => (
+            <p key={f.label} className={`${f.cls} text-3xl`}>
+              {f.label} — a pressed flower, wilting
+            </p>
+          ))}
+        </section>
+
+        {/* Palette */}
+        <section className="space-y-4 border-t border-ink/10 pt-10">
           <h2 className="font-mono text-sm uppercase tracking-widest text-ink/60">
             Palette
           </h2>
@@ -36,97 +99,14 @@ export default function StyleGuide() {
           </div>
         </section>
 
-        {/* Silver accent, used small now */}
+        {/* Silver accent */}
         <section className="space-y-3 border-t border-ink/10 pt-10">
           <h2 className="font-mono text-sm uppercase tracking-widest text-ink/60">
-            Silver accent — small-scale jewelry use, not full headlines
+            Silver accent — small-scale
           </h2>
           <div className="bg-ink rounded-xl px-6 py-4 inline-flex items-center gap-3">
             <ChromeText className="font-picnic text-3xl">arjita</ChromeText>
           </div>
-          <p className="max-w-prose text-sm text-ink/60">
-            Same two-layer gradient + sheen technique as before, now reserved
-            for small badges/labels/clasp-like moments instead of hero
-            headlines. A literal pearl-dot lettering effect (like the
-            &ldquo;self&rdquo; in your Ciclo Archive reference) is possible as
-            a future build if you want that exact look for one specific spot.
-          </p>
-        </section>
-
-        {/* PicNic */}
-        <section className="space-y-3 border-t border-ink/10 pt-10">
-          <h2 className="font-mono text-sm uppercase tracking-widest text-ink/60">
-            PicNic — headline display{" "}
-            <span className="text-mocha">(pending license confirmation)</span>
-          </h2>
-          <p className="font-picnic text-6xl leading-none">hi, i&apos;m arjita</p>
-        </section>
-
-        {/* Kaeru Kaeru */}
-        <section className="space-y-3 border-t border-ink/10 pt-10">
-          <h2 className="font-mono text-sm uppercase tracking-widest text-ink/60">
-            Kaeru Kaeru — display + small accents
-          </h2>
-          <p className="font-kaeru text-6xl leading-none">projects &amp; play</p>
-        </section>
-
-        {/* Cursive candidates */}
-        <section className="space-y-6 border-t border-ink/10 pt-10">
-          <h2 className="font-mono text-sm uppercase tracking-widest text-ink/60">
-            Cursive candidates — pick one
-          </h2>
-          <div className="space-y-1">
-            <p className="font-mono text-xs text-ink/50">Beau Rivage</p>
-            <p style={{ fontFamily: "var(--font-beau-rivage)" }} className="text-5xl">
-              still with you
-            </p>
-          </div>
-          <div className="space-y-1">
-            <p className="font-mono text-xs text-ink/50">Mrs Saint Delafield</p>
-            <p
-              style={{ fontFamily: "var(--font-mrs-saint-delafield)" }}
-              className="text-5xl"
-            >
-              still with you
-            </p>
-          </div>
-          <div className="space-y-1">
-            <p className="font-mono text-xs text-ink/50">Petit Formal Script</p>
-            <p
-              style={{ fontFamily: "var(--font-petit-formal-script)" }}
-              className="text-5xl"
-            >
-              still with you
-            </p>
-          </div>
-        </section>
-
-        {/* Flor de Ruina — status check */}
-        <section className="space-y-3 border-t border-ink/10 pt-10">
-          <h2 className="font-mono text-sm uppercase tracking-widest text-ink/60">
-            Flor de Ruina —{" "}
-            <span className="text-mocha">still wanted, or retire it?</span>
-          </h2>
-          <div className="space-y-2">
-            <p className="font-flor-germen text-4xl leading-tight">germen — welcome</p>
-            <p className="font-flor-fractura text-4xl leading-tight">fractura — welcome</p>
-          </div>
-          <p className="max-w-prose text-sm text-ink/60">
-            This one leans pixel/brutalist-glitch, which was more the old
-            direction. It could still work as a rare &ldquo;decay&rdquo;
-            moment (e.g. a pressed flower wilting) — or we drop it entirely.
-          </p>
-        </section>
-
-        {/* Body copy */}
-        <section className="space-y-3 border-t border-ink/10 pt-10">
-          <h2 className="font-mono text-sm uppercase tracking-widest text-ink/60">
-            Inter — body copy
-          </h2>
-          <p className="max-w-prose text-lg leading-relaxed">
-            This is what regular paragraph text looks like — calm, warm,
-            easy to read against the paper background.
-          </p>
         </section>
       </div>
     </main>

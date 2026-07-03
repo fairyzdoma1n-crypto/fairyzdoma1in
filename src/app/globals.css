@@ -32,9 +32,13 @@
   --font-flor-flor: var(--font-flor-flor);
   --font-flor-ruina: var(--font-flor-ruina);
   --font-flor-fractura: var(--font-flor-fractura);
-  --font-beau-rivage: var(--font-beau-rivage);
-  --font-mrs-saint-delafield: var(--font-mrs-saint-delafield);
-  --font-petit-formal-script: var(--font-petit-formal-script);
+  --font-miss-fajardose: var(--font-miss-fajardose);
+
+  /* Semantic aliases — declared after the tokens they point to, since
+     @theme inline silently drops utilities that forward-reference a
+     not-yet-declared theme token in the same block. */
+  --font-body: var(--font-flor-semilla);
+  --font-headline: var(--font-miss-fajardose);
 }
 
 body {
