@@ -1,5 +1,11 @@
 import localFont from "next/font/local";
-import { Inter, Geist_Mono } from "next/font/google";
+import {
+  Inter,
+  Geist_Mono,
+  Beau_Rivage,
+  Mrs_Saint_Delafield,
+  Petit_Formal_Script,
+} from "next/font/google";
 
 // Clean, boring body sans — intentional contrast to the loud display fonts below.
 export const inter = Inter({
@@ -13,30 +19,19 @@ export const mono = Geist_Mono({
   subsets: ["latin"],
 });
 
-// Pilowlava — chunky graffiti/lava-drip display font. Big whimsical headlines.
-export const pilowlava = localFont({
-  src: "../fonts/pilowlava/Pilowlava-Regular.woff2",
-  variable: "--font-pilowlava",
-  display: "swap",
-});
-
-export const pilowlavaAtome = localFont({
-  src: "../fonts/pilowlava/Pilowlava-Atome.woff2",
-  variable: "--font-pilowlava-atome",
+// PicNic — organic serif with contextual ligatures. Big whimsical headlines.
+// NOTE: licensed under Velvetyne's CUTE license, not standard OFL — pending your confirmation.
+export const picnic = localFont({
+  src: "../fonts/picnic/PicNic.woff2",
+  variable: "--font-picnic",
   display: "swap",
 });
 
 // Kaeru Kaeru — blobby, poison-dart-frog-and-woodcut inspired display font.
+// Now doing double duty: display headers and small/retro-accent spots (replacing TINY).
 export const kaerukaeru = localFont({
   src: "../fonts/kaerukaeru/kaerukaeru-Regular.woff2",
   variable: "--font-kaeru",
-  display: "swap",
-});
-
-// TINY — dot-matrix pixel font, for retro-computing accents (counter, guestbook).
-export const tiny = localFont({
-  src: "../fonts/tiny/TINY5x3-160.woff2",
-  variable: "--font-tiny",
   display: "swap",
 });
 
@@ -71,18 +66,36 @@ export const florFractura = localFont({
   display: "swap",
 });
 
-// PicNic held back — CUTE license terms not yet confirmed. Not wired into the theme.
+// Three cursive candidates for comparison — pick one, the other two get removed.
+export const beauRivage = Beau_Rivage({
+  variable: "--font-beau-rivage",
+  weight: "400",
+  subsets: ["latin"],
+});
+
+export const mrsSaintDelafield = Mrs_Saint_Delafield({
+  variable: "--font-mrs-saint-delafield",
+  weight: "400",
+  subsets: ["latin"],
+});
+
+export const petitFormalScript = Petit_Formal_Script({
+  variable: "--font-petit-formal-script",
+  weight: "400",
+  subsets: ["latin"],
+});
 
 export const allFontVariables = [
   inter.variable,
   mono.variable,
-  pilowlava.variable,
-  pilowlavaAtome.variable,
+  picnic.variable,
   kaerukaeru.variable,
-  tiny.variable,
   florGermen.variable,
   florSemilla.variable,
   florFlor.variable,
   florRuina.variable,
   florFractura.variable,
+  beauRivage.variable,
+  mrsSaintDelafield.variable,
+  petitFormalScript.variable,
 ].join(" ");

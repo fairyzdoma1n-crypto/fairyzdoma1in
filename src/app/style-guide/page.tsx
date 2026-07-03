@@ -1,14 +1,14 @@
+import { ChromeText } from "@/components/ChromeText";
+
 export default function StyleGuide() {
   return (
-    <main className="min-h-screen bg-cream text-ink px-6 py-16 sm:px-12">
+    <main className="min-h-screen bg-paper text-ink px-6 py-16 sm:px-12">
       <div className="mx-auto max-w-4xl space-y-20">
         <header className="space-y-2">
           <p className="font-mono text-xs tracking-widest uppercase text-ink/60">
-            internal / not a real page
+            internal / not a real page — v2, french-archive direction
           </p>
-          <h1 className="font-pilowlava text-5xl sm:text-6xl">
-            style guide
-          </h1>
+          <h1 className="font-picnic text-5xl sm:text-6xl">style guide</h1>
         </header>
 
         {/* Color palette */}
@@ -18,11 +18,11 @@ export default function StyleGuide() {
           </h2>
           <div className="grid grid-cols-2 gap-4 sm:grid-cols-5">
             {[
-              { name: "cream", cls: "bg-cream border border-ink/10", hex: "#FAF6EC" },
-              { name: "ink", cls: "bg-ink", hex: "#1B1B1F" },
-              { name: "lime", cls: "bg-lime", hex: "#CFFF3D" },
-              { name: "rose", cls: "bg-rose", hex: "#F6C6D6" },
-              { name: "rose-deep", cls: "bg-rose-deep", hex: "#E893AC" },
+              { name: "paper", cls: "bg-paper border border-ink/10", hex: "#F1EBE1" },
+              { name: "ink", cls: "bg-ink", hex: "#22201D" },
+              { name: "mocha", cls: "bg-mocha", hex: "#8A7362" },
+              { name: "rose-dust", cls: "bg-rose-dust", hex: "#D9BDB6" },
+              { name: "stone", cls: "bg-stone", hex: "#ADA69C" },
             ].map((c) => (
               <div key={c.name} className="space-y-2">
                 <div className={`h-20 w-full rounded-xl ${c.cls}`} />
@@ -34,60 +34,87 @@ export default function StyleGuide() {
               </div>
             ))}
           </div>
-          <div className="inline-block px-4 py-3 bg-ink rounded">
-            <p className="font-mono text-xl font-bold text-chrome">
-              chrome text effect — for special accents
-            </p>
-          </div>
         </section>
 
-        {/* Pilowlava */}
+        {/* Silver accent, used small now */}
         <section className="space-y-3 border-t border-ink/10 pt-10">
           <h2 className="font-mono text-sm uppercase tracking-widest text-ink/60">
-            Pilowlava — headline display
+            Silver accent — small-scale jewelry use, not full headlines
           </h2>
-          <p className="font-pilowlava text-6xl leading-none">
-            hi, i&apos;m arjita
+          <div className="bg-ink rounded-xl px-6 py-4 inline-flex items-center gap-3">
+            <ChromeText className="font-picnic text-3xl">arjita</ChromeText>
+          </div>
+          <p className="max-w-prose text-sm text-ink/60">
+            Same two-layer gradient + sheen technique as before, now reserved
+            for small badges/labels/clasp-like moments instead of hero
+            headlines. A literal pearl-dot lettering effect (like the
+            &ldquo;self&rdquo; in your Ciclo Archive reference) is possible as
+            a future build if you want that exact look for one specific spot.
           </p>
-          <p className="font-pilowlava-atome text-4xl leading-none text-rose-deep">
-            atome variant (glitchier)
-          </p>
+        </section>
+
+        {/* PicNic */}
+        <section className="space-y-3 border-t border-ink/10 pt-10">
+          <h2 className="font-mono text-sm uppercase tracking-widest text-ink/60">
+            PicNic — headline display{" "}
+            <span className="text-mocha">(pending license confirmation)</span>
+          </h2>
+          <p className="font-picnic text-6xl leading-none">hi, i&apos;m arjita</p>
         </section>
 
         {/* Kaeru Kaeru */}
         <section className="space-y-3 border-t border-ink/10 pt-10">
           <h2 className="font-mono text-sm uppercase tracking-widest text-ink/60">
-            Kaeru Kaeru — blobby / organic display
+            Kaeru Kaeru — display + small accents
           </h2>
-          <p className="font-kaeru text-6xl leading-none">
-            projects &amp; play
-          </p>
-          <p className="font-kaeru text-2xl leading-tight text-ink/70">
-            abcdefghijklm nopqrstuvwxyz 0123456789
-          </p>
+          <p className="font-kaeru text-6xl leading-none">projects &amp; play</p>
         </section>
 
-        {/* Flor de Ruina lifecycle */}
-        <section className="space-y-3 border-t border-ink/10 pt-10">
+        {/* Cursive candidates */}
+        <section className="space-y-6 border-t border-ink/10 pt-10">
           <h2 className="font-mono text-sm uppercase tracking-widest text-ink/60">
-            Flor de Ruina — five life-cycle stages
+            Cursive candidates — pick one
           </h2>
-          <div className="space-y-2">
-            <p className="font-flor-germen text-4xl leading-tight">germen — welcome</p>
-            <p className="font-flor-semilla text-4xl leading-tight">semilla — welcome</p>
-            <p className="font-flor-flor text-4xl leading-tight">flor — welcome</p>
-            <p className="font-flor-ruina text-4xl leading-tight">ruina — welcome</p>
-            <p className="font-flor-fractura text-4xl leading-tight">fractura — welcome</p>
+          <div className="space-y-1">
+            <p className="font-mono text-xs text-ink/50">Beau Rivage</p>
+            <p style={{ fontFamily: "var(--font-beau-rivage)" }} className="text-5xl">
+              still with you
+            </p>
+          </div>
+          <div className="space-y-1">
+            <p className="font-mono text-xs text-ink/50">Mrs Saint Delafield</p>
+            <p
+              style={{ fontFamily: "var(--font-mrs-saint-delafield)" }}
+              className="text-5xl"
+            >
+              still with you
+            </p>
+          </div>
+          <div className="space-y-1">
+            <p className="font-mono text-xs text-ink/50">Petit Formal Script</p>
+            <p
+              style={{ fontFamily: "var(--font-petit-formal-script)" }}
+              className="text-5xl"
+            >
+              still with you
+            </p>
           </div>
         </section>
 
-        {/* TINY */}
+        {/* Flor de Ruina — status check */}
         <section className="space-y-3 border-t border-ink/10 pt-10">
           <h2 className="font-mono text-sm uppercase tracking-widest text-ink/60">
-            TINY — pixel / retro accents
+            Flor de Ruina —{" "}
+            <span className="text-mocha">still wanted, or retire it?</span>
           </h2>
-          <p className="font-tiny text-3xl leading-none">
-            visitors: 004201
+          <div className="space-y-2">
+            <p className="font-flor-germen text-4xl leading-tight">germen — welcome</p>
+            <p className="font-flor-fractura text-4xl leading-tight">fractura — welcome</p>
+          </div>
+          <p className="max-w-prose text-sm text-ink/60">
+            This one leans pixel/brutalist-glitch, which was more the old
+            direction. It could still work as a rare &ldquo;decay&rdquo;
+            moment (e.g. a pressed flower wilting) — or we drop it entirely.
           </p>
         </section>
 
@@ -97,9 +124,8 @@ export default function StyleGuide() {
             Inter — body copy
           </h2>
           <p className="max-w-prose text-lg leading-relaxed">
-            This is what regular paragraph text looks like. It should stay
-            calm and easy to read even while the headers around it are loud,
-            blobby, and a little unhinged — the contrast is the point.
+            This is what regular paragraph text looks like — calm, warm,
+            easy to read against the paper background.
           </p>
         </section>
       </div>
