@@ -39,6 +39,7 @@
      not-yet-declared theme token in the same block. */
   --font-body: var(--font-flor-semilla);
   --font-headline: var(--font-miss-fajardose);
+  --font-nav: var(--font-kaeru);
 }
 
 body {

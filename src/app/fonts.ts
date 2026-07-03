@@ -21,7 +21,7 @@ export const missFajardose = Miss_Fajardose({
 });
 
 // PicNic — organic serif with contextual ligatures. Display + small accents.
-// NOTE: licensed under Velvetyne's CUTE license, not standard OFL — pending your confirmation.
+// Licensed under Velvetyne's CUTE license — confirmed cleared for use.
 export const picnic = localFont({
   src: "../fonts/picnic/PicNic.woff2",
   variable: "--font-picnic",
@@ -29,7 +29,7 @@ export const picnic = localFont({
 });
 
 // Kaeru Kaeru — blobby, poison-dart-frog-and-woodcut inspired display font.
-// Role TBD.
+// Section labels / nav.
 export const kaerukaeru = localFont({
   src: "../fonts/kaerukaeru/kaerukaeru-Regular.woff2",
   variable: "--font-kaeru",

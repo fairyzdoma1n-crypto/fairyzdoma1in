@@ -29,17 +29,18 @@ export default function StyleGuide() {
 
           <div className="space-y-2">
             <p className="font-mono text-xs text-ink/50">
-              font-picnic — PicNic — display + small accents{" "}
-              <span className="text-mocha">(pending license confirmation)</span>
+              font-picnic — PicNic — display + small accents
             </p>
             <p className="font-picnic text-5xl leading-none">projects &amp; play</p>
           </div>
 
           <div className="space-y-2">
             <p className="font-mono text-xs text-ink/50">
-              font-kaeru — Kaeru Kaeru — role TBD
+              font-nav — Kaeru Kaeru — section labels / nav
             </p>
-            <p className="font-kaeru text-5xl leading-none">what&apos;s in my bag</p>
+            <p className="font-nav text-3xl leading-none uppercase tracking-wide">
+              what&apos;s in my bag
+            </p>
           </div>
 
           <div className="space-y-2 max-w-prose">
