@@ -1,26 +1,58 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #faf6ec;
+  --foreground: #1b1b1f;
+
+  --cream: #faf6ec;
+  --ink: #1b1b1f;
+  --lime: #cfff3d;
+  --rose: #f6c6d6;
+  --rose-deep: #e893ac;
+  --chrome: #c8ccd0;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-cream: var(--cream);
+  --color-ink: var(--ink);
+  --color-lime: var(--lime);
+  --color-rose: var(--rose);
+  --color-rose-deep: var(--rose-deep);
+  --color-chrome: var(--chrome);
+
+  --font-sans: var(--font-inter);
+  --font-mono: var(--font-mono);
+  --font-pilowlava: var(--font-pilowlava);
+  --font-pilowlava-atome: var(--font-pilowlava-atome);
+  --font-kaeru: var(--font-kaeru);
+  --font-tiny: var(--font-tiny);
+  --font-flor-germen: var(--font-flor-germen);
+  --font-flor-semilla: var(--font-flor-semilla);
+  --font-flor-flor: var(--font-flor-flor);
+  --font-flor-ruina: var(--font-flor-ruina);
+  --font-flor-fractura: var(--font-flor-fractura);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+}
+
+.text-chrome {
+  background-image: linear-gradient(
+    115deg,
+    #8e9296 0%,
+    #ffffff 25%,
+    #b8bcc0 45%,
+    #ffffff 65%,
+    #8e9296 100%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
 }
