@@ -1,13 +1,44 @@
-import { PlaceholderPage } from "@/components/PlaceholderPage";
+import Image from "next/image";
+import Link from "next/link";
+import { BagPortfolio } from "@/components/BagPortfolio";
+import { PaperGrain } from "@/components/PaperGrain";
 
-export const metadata = { title: "what's in my bag · arjita" };
+export const metadata = {
+  title: "what's in my bag · arjita",
+  description: "arjita's portfolio, unpacked one object at a time.",
+};
 
 export default function BagPage() {
   return (
-    <PlaceholderPage
-      catNo="003"
-      title="what's in my bag"
-      note="the contents are being photographed and annotated, vogue-style. every item will be pinned down with a caption and a reason it earned its place."
-    />
+    <div className="relative min-h-screen overflow-x-clip bg-paper text-ink">
+      <PaperGrain />
+
+      <main className="mx-auto max-w-5xl px-6 py-10">
+        <Link
+          href="/"
+          className="font-mono text-[11px] uppercase tracking-[0.25em] text-ink/50 transition-colors hover:text-mocha"
+        >
+          ← back to the arjives
+        </Link>
+
+        <header className="mt-8 text-center">
+          <h1>
+            <Image
+              src="/assets/bag-lettering.png"
+              alt="what's in my bag? — hand-lettered"
+              width={800}
+              height={400}
+              priority
+              className="mx-auto h-auto w-[min(100%,520px)]"
+            />
+          </h1>
+          <p className="-mt-6 font-mono text-[11px] uppercase tracking-[0.3em] text-ink/55 sm:-mt-10">
+            check out my portfolio!
+          </p>
+        </header>
+
+        <BagPortfolio />
+      </main>
+    </div>
   );
 }
