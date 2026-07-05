@@ -22,7 +22,7 @@ const projects: Project[] = [
     alt: "a chrome star charm",
     title: "project one",
     blurb: "info + details coming soon — this star is holding its spot.",
-    packed: { left: "18%", top: "-13%", width: "27%", rotate: -14 },
+    packed: { left: "15%", top: "-13%", width: "27%", rotate: -14 },
   },
   {
     id: "flower",
@@ -30,7 +30,7 @@ const projects: Project[] = [
     alt: "a pressed pink flower",
     title: "project two",
     blurb: "info + details coming soon — this flower is holding its spot.",
-    packed: { left: "42%", top: "-17%", width: "31%", rotate: 6 },
+    packed: { left: "35%", top: "-17%", width: "31%", rotate: 6 },
   },
   {
     id: "clapper",

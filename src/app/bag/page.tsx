@@ -4,7 +4,7 @@ import { BagPortfolio } from "@/components/BagPortfolio";
 
 export const metadata = {
   title: "what's in my bag · arjita",
-  description: "arjita's portfolio, unpacked one object at a time.",
+  description: "my gallery of projects.",
 };
 
 export default function BagPage() {
