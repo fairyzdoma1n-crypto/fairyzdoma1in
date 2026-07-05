@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import { BagPortfolio } from "@/components/BagPortfolio";
-import { PaperGrain } from "@/components/PaperGrain";
 
 export const metadata = {
   title: "what's in my bag · arjita",
@@ -11,8 +10,6 @@ export const metadata = {
 export default function BagPage() {
   return (
     <div className="relative min-h-screen overflow-x-clip bg-paper text-ink">
-      <PaperGrain />
-
       <main className="mx-auto max-w-5xl px-6 py-10">
         <Link
           href="/"

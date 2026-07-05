@@ -62,14 +62,14 @@ export function BagPortfolio() {
       </p>
 
       {unpacked ? (
-        /* ── unpacked: bag left, projects laid out right ── */
-        <div className="mt-10 flex flex-col items-center gap-10 lg:flex-row lg:items-start lg:gap-6">
+        /* ── unpacked: bag slides left, projects form a grid on the right ── */
+        <div className="mt-10 flex flex-col items-center gap-10 md:flex-row md:items-center md:gap-8">
           <motion.button
             layoutId="bag"
             transition={spring}
             onClick={() => setUnpacked(false)}
             aria-label="pack the projects back into the bag"
-            className="w-64 shrink-0 cursor-pointer sm:w-80 lg:mt-6"
+            className="w-60 shrink-0 cursor-pointer sm:w-72 md:w-80"
           >
             <Image
               src="/assets/bag.png"
@@ -81,7 +81,7 @@ export function BagPortfolio() {
             />
           </motion.button>
 
-          <div className="grid flex-1 grid-cols-1 gap-8 sm:grid-cols-3">
+          <div className="grid flex-1 grid-cols-3 gap-4 sm:gap-8">
             {projects.map((p, i) => (
               <div key={p.id} className="flex flex-col items-center text-center">
                 <motion.div
@@ -89,7 +89,7 @@ export function BagPortfolio() {
                   transition={
                     reducedMotion ? { duration: 0 } : { ...spring, delay: i * 0.07 }
                   }
-                  className="w-32 sm:w-36"
+                  className="w-24 sm:w-32"
                 >
                   <Image
                     src={p.img}

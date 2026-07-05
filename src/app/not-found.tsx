@@ -1,12 +1,9 @@
 import Link from "next/link";
-import { PaperGrain } from "@/components/PaperGrain";
 import { Sparkle, Squiggle } from "@/components/doodles";
 
 export default function NotFound() {
   return (
     <div className="relative min-h-screen bg-paper text-ink">
-      <PaperGrain />
-
       <main className="mx-auto flex min-h-screen max-w-3xl flex-col items-center justify-center px-6 py-20 text-center">
         <div className="relative rotate-2 rounded-sm border border-ink/25 bg-stone/20 px-10 py-12 shadow-[3px_4px_0_rgba(34,32,29,0.1)]">
           <span

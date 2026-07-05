@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { PaperGrain } from "@/components/PaperGrain";
 import { PressedFlower, Sparkle } from "@/components/doodles";
 
 export function PlaceholderPage({
@@ -13,8 +12,6 @@ export function PlaceholderPage({
 }) {
   return (
     <div className="relative min-h-screen bg-paper text-ink">
-      <PaperGrain />
-
       <main className="mx-auto flex min-h-screen max-w-3xl flex-col justify-center px-6 py-20">
         <Link
           href="/"
