@@ -10,8 +10,9 @@ type Project = {
   alt: string;
   title: string;
   blurb: string;
-  /* Where the object peeks out of the bag in the packed state. */
-  packed: { left: string; top: string; width: number; rotate: number };
+  /* Where the object peeks out of the bag in the packed state.
+     Width is a percentage of the bag container so it scales with it. */
+  packed: { left: string; top: string; width: string; rotate: number };
 };
 
 const projects: Project[] = [
@@ -21,7 +22,7 @@ const projects: Project[] = [
     alt: "a chrome star charm",
     title: "project one",
     blurb: "info + details coming soon — this star is holding its spot.",
-    packed: { left: "18%", top: "-13%", width: 96, rotate: -14 },
+    packed: { left: "18%", top: "-13%", width: "27%", rotate: -14 },
   },
   {
     id: "flower",
@@ -29,7 +30,7 @@ const projects: Project[] = [
     alt: "a pressed pink flower",
     title: "project two",
     blurb: "info + details coming soon — this flower is holding its spot.",
-    packed: { left: "42%", top: "-17%", width: 110, rotate: 6 },
+    packed: { left: "42%", top: "-17%", width: "31%", rotate: 6 },
   },
   {
     id: "clapper",
@@ -37,7 +38,7 @@ const projects: Project[] = [
     alt: "a hand-drawn film clapperboard sticker",
     title: "project three",
     blurb: "info + details coming soon — this clapper is holding its spot.",
-    packed: { left: "64%", top: "-11%", width: 92, rotate: 12 },
+    packed: { left: "65%", top: "-11%", width: "26%", rotate: 12 },
   },
 ];
 
@@ -50,7 +51,7 @@ export function BagPortfolio() {
     : { type: "spring" as const, stiffness: 110, damping: 15, mass: 0.9 };
 
   return (
-    <div className="mt-4">
+    <div className="mt-3">
       {/* the hint line swaps with the state */}
       <p
         aria-live="polite"
@@ -63,13 +64,13 @@ export function BagPortfolio() {
 
       {unpacked ? (
         /* ── unpacked: bag slides left, projects form a grid on the right ── */
-        <div className="mt-10 flex flex-col items-center gap-10 md:flex-row md:items-center md:gap-8">
+        <div className="mt-6 flex flex-col items-center gap-8 md:flex-row md:items-center md:gap-10">
           <motion.button
             layoutId="bag"
             transition={spring}
             onClick={() => setUnpacked(false)}
             aria-label="pack the projects back into the bag"
-            className="w-60 shrink-0 cursor-pointer sm:w-72 md:w-80"
+            className="w-64 shrink-0 cursor-pointer sm:w-80 md:w-96"
           >
             <Image
               src="/assets/bag.png"
@@ -81,7 +82,7 @@ export function BagPortfolio() {
             />
           </motion.button>
 
-          <div className="grid flex-1 grid-cols-3 gap-4 sm:gap-8">
+          <div className="grid flex-1 grid-cols-3 gap-5 sm:gap-8">
             {projects.map((p, i) => (
               <div key={p.id} className="flex flex-col items-center text-center">
                 <motion.div
@@ -89,7 +90,7 @@ export function BagPortfolio() {
                   transition={
                     reducedMotion ? { duration: 0 } : { ...spring, delay: i * 0.07 }
                   }
-                  className="w-24 sm:w-32"
+                  className="w-28 sm:w-36 md:w-44"
                 >
                   <Image
                     src={p.img}
@@ -105,8 +106,8 @@ export function BagPortfolio() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: reducedMotion ? 0 : 0.35 + i * 0.07 }}
                   >
-                    <h3 className="font-nav mt-4 text-xl lowercase">{p.title}</h3>
-                    <p className="font-body mt-1 max-w-[24ch] text-sm leading-relaxed text-ink/70">
+                    <h3 className="font-nav mt-3 text-2xl lowercase">{p.title}</h3>
+                    <p className="font-body mt-1 max-w-[26ch] text-[15px] leading-normal text-ink/70">
                       {p.blurb}
                     </p>
                   </motion.div>
@@ -117,11 +118,11 @@ export function BagPortfolio() {
         </div>
       ) : (
         /* ── packed: objects peeking out of the bag ── */
-        <div className="mt-16 flex justify-center">
+        <div className="mt-8 flex justify-center">
           <button
             onClick={() => setUnpacked(true)}
             aria-label="unpack the bag to see the portfolio"
-            className="relative w-72 cursor-pointer sm:w-96"
+            className="relative w-80 cursor-pointer sm:w-[30rem]"
           >
             {projects.map((p) => (
               <motion.div

@@ -25,42 +25,44 @@ export default function Home() {
       <DoodleLayer />
 
       {/* content floats above the drawing surface; only links and buttons
-          catch the pointer so the rest of the page stays drawable */}
-      <main className="pointer-events-none relative z-10 mx-auto min-h-screen max-w-6xl px-6 pb-10">
-        {/* ── hero: photo left, lettering overlapping, blurb right ── */}
-        <section aria-label="introduction" className="flex pt-4">
-          <Image
-            src="/assets/arjita-standing.png"
-            alt="arjita standing with her sticker-covered laptop in hand"
-            width={1080}
-            height={1920}
-            priority
-            className="relative z-[1] mt-12 w-48 shrink-0 sm:w-60 lg:w-80"
-          />
+          catch the pointer so the rest of the page stays drawable. the
+          whole intro cluster hugs the left edge — the open right side of
+          the screen is the visitor's drawing space. */}
+      <main className="pointer-events-none relative z-10 min-h-screen px-2 pb-10">
+        {/* ── hero: photo in front, lettering tucked behind ── */}
+        <section aria-label="introduction" className="relative max-w-xl">
+          <h1 className="absolute left-16 top-1 z-[1] sm:left-24">
+            <Image
+              src="/assets/arjita-lettering.png"
+              alt="arjita — hand-lettered in looping calligraphy"
+              width={800}
+              height={400}
+              priority
+              className="h-auto w-[260px] sm:w-[360px]"
+            />
+          </h1>
 
-          <div className="-ml-24 min-w-0 flex-1 sm:-ml-32 lg:-ml-48">
-            <h1>
-              <Image
-                src="/assets/arjita-lettering.png"
-                alt="arjita — hand-lettered in looping calligraphy"
-                width={800}
-                height={400}
-                priority
-                className="relative z-[2] h-auto w-[min(100%,620px)]"
-              />
-            </h1>
+          <div className="flex pt-12 sm:pt-14">
+            <Image
+              src="/assets/arjita-standing.png"
+              alt="arjita standing with her sticker-covered laptop in hand"
+              width={1080}
+              height={1920}
+              priority
+              className="relative z-[2] w-44 shrink-0 sm:w-56"
+            />
 
-            <div className="-mt-4 ml-24 max-w-md sm:ml-32 lg:-mt-10 lg:ml-48">
-              <p className="font-body text-[16px] leading-relaxed text-ink/85">
+            <div className="mt-28 max-w-xs sm:mt-36">
+              <p className="font-body text-[15px] leading-snug text-ink/85">
                 hey! i&apos;m arjita — logician by trade, storyteller by
                 nature.
               </p>
-              <p className="font-body mt-2 text-[14px] leading-relaxed text-ink/60">
+              <p className="font-body mt-2 text-[13px] leading-snug text-ink/60">
                 incoming computer science student, chronic doodler, and the
                 archivist of everything you&apos;re about to see.
               </p>
 
-              <ul className="mt-6 flex gap-7" aria-label="social links">
+              <ul className="mt-5 flex gap-6" aria-label="social links">
                 {socials.map((s) => (
                   <li key={s.label}>
                     <a
@@ -71,10 +73,10 @@ export default function Home() {
                         : {})}
                     >
                       <PressedFlower
-                        size={20}
+                        size={18}
                         className="text-mocha transition-transform group-hover:-rotate-12 group-hover:scale-110"
                       />
-                      <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-ink/60 transition-colors group-hover:text-mocha">
+                      <span className="font-mono text-[9px] uppercase tracking-[0.2em] text-ink/60 transition-colors group-hover:text-mocha">
                         {s.label}
                       </span>
                     </a>
